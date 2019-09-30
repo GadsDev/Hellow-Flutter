@@ -10,7 +10,10 @@ class _GustavoPageState extends State<GustavoPage> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text('Visite: ', textAlign: TextAlign.center,),
+        Text('Visite: ',   
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.body1        
+        ),
         RaisedButton(
           child: Text('https://github.com/GadsDev', textAlign: TextAlign.center,),)
       ],

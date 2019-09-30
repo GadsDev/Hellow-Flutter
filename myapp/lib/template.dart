@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/homePage.dart';
+import 'pages/gustavoPage.dart';
 
 class Template extends StatefulWidget {
   @override
@@ -8,15 +9,17 @@ class Template extends StatefulWidget {
 
 class _TemplateState extends State<Template> {
   var homePage = new HomePage();
-  var _selectedPage = 0;
+   var gustavoPage = new GustavoPage();
+  var _selectedPage = 1;
   var _pages;
 
   @override
   Widget build(BuildContext context) {
     _pages = [
-      homePage
+      homePage,
+      gustavoPage
     ];
-    
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Gustavo Alexandre'),
@@ -28,6 +31,12 @@ class _TemplateState extends State<Template> {
           BottomNavigationBarItem(icon: Icon(Icons.school), title: Text('School'))
         ],
         fixedColor: Colors.deepPurple,
+        currentIndex: _selectedPage,
+        onTap:  (int index){
+          setState(() {
+           _selectedPage = index; 
+          });
+        },
       ),
     );
   }
